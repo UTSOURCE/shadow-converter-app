@@ -144,7 +144,7 @@ const App = () => {
                     <div className="p-6 space-y-6 bg-gray-800/50 border-r-0 md:border-r border-gray-700">
                         <div>
                             <label className="block text-sm font-medium text-gray-300 mb-2">阴影类型</label>
-                            <div className="flex bg-gray-700 rounded-lg p-1">
+                            <div className="flex bg-white rounded-lg p-1">
                                 <button onClick={() => setShadowType('box')} className={`w-1/2 p-2 rounded-md text-sm font-semibold flex items-center justify-center gap-2 transition-colors ${shadowType === 'box' ? 'bg-cyan-500 text-white' : 'text-gray-300 hover:bg-gray-600'}`}>
                                     <Box size={16} /> 图层投影
                                 </button>
