@@ -144,7 +144,7 @@ const App = () => {
                     <div className="p-6 space-y-6 bg-gray-800/50 border-r-0 md:border-r border-gray-700">
                         <div>
                             <label className="block text-sm font-medium text-gray-300 mb-2">阴影类型</label>
-                            <div className="flex bg-white rounded-lg p-1">
+                            <div className="flex bg-gray-700 rounded-lg p-1">
                                 <button onClick={() => setShadowType('box')} className={`w-1/2 p-2 rounded-md text-sm font-semibold flex items-center justify-center gap-2 transition-colors ${shadowType === 'box' ? 'bg-cyan-500 text-white' : 'text-gray-300 hover:bg-gray-600'}`}>
                                     <Box size={16} /> 图层投影
                                 </button>
@@ -208,7 +208,7 @@ const App = () => {
 
                     {/* 预览和代码区 */}
                     <div className="p-6 space-y-6">
-                        <div className="h-64 bg-gray-700/50 rounded-lg flex items-center justify-center p-4 border border-dashed border-gray-600">
+                        <div className="h-64 bg-white rounded-lg flex items-center justify-center p-4 border border-dashed border-gray-600">
                             {shadowType === 'box' ? (
                                 <div className="w-32 h-32 bg-cyan-500 rounded-xl flex items-center justify-center transition-all duration-200" style={previewStyle}>
                                      <span className="font-bold text-white">预览</span>
