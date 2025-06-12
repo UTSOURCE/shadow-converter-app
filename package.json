@@ -2,7 +2,7 @@
   "name": "photoshop-shadow-converter",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://UTSOURCE.github.io/shadow-converter-app",
+ "homepage": "https://shadow-converter-app.chinahome.eu.org",
   "dependencies": {
     "lucide-react": "^0.378.0",
     "react": "^18.3.1",
