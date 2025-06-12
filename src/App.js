@@ -22,7 +22,6 @@ const ControlSliderInput = ({ label, value, onChange, min = 0, max = 100, unit =
     const handleValueChange = (e) => {
         let numValue = parseInt(e.target.value, 10);
         if (isNaN(numValue)) {
-            // 当输入为空字符串时，保持当前值或根据需求处理，这里暂时不做改变以允许用户清空再输入
             onChange(e.target.value);
             return;
         }
@@ -155,16 +154,28 @@ const App = () => {
 
                         <div className="grid grid-cols-2 gap-4 items-center">
                              <div className="space-y-2">
-                                <label htmlFor="color" className="text-sm font-medium text-gray-300">颜色</label>
-                                <div className="relative">
+                                <label htmlFor="color-text-input" className="text-sm font-medium text-gray-300">颜色</label>
+                                <div className="flex items-center h-10 bg-gray-900 rounded-lg border border-gray-600 focus-within:ring-2 focus-within:ring-cyan-500 transition-all">
+                                    <div className="relative w-10 h-10 flex-shrink-0">
+                                        <div 
+                                            className="w-full h-full rounded-l-md"
+                                            style={{ backgroundColor: settings.color }}
+                                        />
+                                        <input
+                                            type="color"
+                                            value={settings.color}
+                                            onChange={(e) => handleSettingChange('color', e.target.value)}
+                                            className="absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer"
+                                        />
+                                    </div>
                                     <input
-                                        id="color"
-                                        type="color"
+                                        id="color-text-input"
+                                        type="text"
                                         value={settings.color}
                                         onChange={(e) => handleSettingChange('color', e.target.value)}
-                                        className="w-full h-10 p-1 bg-gray-700 border border-gray-600 rounded-lg cursor-pointer"
+                                        className="w-full h-full bg-transparent font-mono text-cyan-400 focus:outline-none px-3"
+                                        placeholder="#000000"
                                     />
-                                    <span className="absolute left-10 top-1/2 -translate-y-1/2 font-mono text-gray-200 pointer-events-none">{settings.color}</span>
                                 </div>
                             </div>
                            {shadowType === 'box' && (
@@ -228,3 +239,4 @@ const App = () => {
 };
 
 export default App;
+
