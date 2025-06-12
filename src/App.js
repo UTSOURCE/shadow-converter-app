@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useMemo } from 'react'; // <--- 从这里移除了 useEffect
 import { SlidersHorizontal, Box, Type, Copy, Check } from 'lucide-react';
 
 // 辅助函数：将 HEX 颜色和透明度转换为 RGBA 格式
@@ -239,4 +239,3 @@ const App = () => {
 };
 
 export default App;
-
