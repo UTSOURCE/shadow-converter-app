@@ -1,5 +1,2 @@
 # 忽略所有 node_modules 資料夾內的內容
 node_modules/
-
-# 忽略 package-lock.json 檔案
-package-lock.json
