@@ -18,7 +18,7 @@ const hexToRgba = (hex, opacity) => {
 };
 
 // 自定义带输入框的滑块组件
-const ControlSliderInput = ({ label, value, onChange, min = 0, max = 100, unit = '%' }) => {
+const ControlSliderInput = ({ label, value, onChange, min = 0, max = 100, unit = '%' , disabled = false, className = '' }) => {
     const handleValueChange = (e) => {
         let numValue = parseInt(e.target.value, 10);
         if (isNaN(numValue)) {
@@ -39,16 +39,17 @@ const ControlSliderInput = ({ label, value, onChange, min = 0, max = 100, unit =
     };
 
     return (
-        <div className="space-y-2">
+        <div className={`space-y-2 ${className}`}>
             <label className="flex justify-between items-center text-sm font-medium text-gray-300">
                 <span>{label}</span>
                 <div className="flex items-center bg-gray-900 rounded border border-gray-600 focus-within:ring-2 focus-within:ring-cyan-500 transition-all">
-                     <input
+                    <input
                         type="number"
                         value={value}
                         onChange={handleValueChange}
                         onBlur={handleBlur}
                         className="w-20 bg-transparent text-cyan-400 font-mono text-right focus:outline-none p-1 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                        disabled={disabled}
                     />
                     <span className="text-gray-400 pr-2 select-none">{unit}</span>
                 </div>
@@ -60,6 +61,7 @@ const ControlSliderInput = ({ label, value, onChange, min = 0, max = 100, unit =
                 value={isNaN(parseInt(value)) ? min : parseInt(value)}
                 onChange={(e) => onChange(parseInt(e.target.value))}
                 className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-cyan-500"
+                disabled={disabled}
             />
         </div>
     );
